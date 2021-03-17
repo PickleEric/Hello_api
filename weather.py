@@ -1,10 +1,11 @@
 import os
 import requests
-
+from pprint import pprint
 
 def main():
     url = 'http://api.openweathermap.org/data/2.5/weather'  # Replace this with your own URL and key
     data = requests.get(url).json()
+    pprint(data)
     weather_description = data['weather'][0]['description']
 
     temp_f = data['main']['temp']
